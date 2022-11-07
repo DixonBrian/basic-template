@@ -117,9 +117,9 @@
                                     <?php
                                     wp_nav_menu(
                                         array(
-                                            'theme_location' => 'menu-1',
+                                            'theme_location' => 'primary-menu',
                                             'menu_id'        => 'desktop-menu',
-                                            'menu_class'    => 'align-right',
+                                            'menu_class'    => 'menu-menu-1-container',
                                         )
                                     );
                                     ?>
@@ -132,4 +132,14 @@
         </div> <!------------------------ /#navbar ------------------------>
 
 	</header><!-- #masthead -->
-    <main id="content" class="site-content">
+ 	<main id="content" class="site-content">
+		<?php 
+            $field_hero = get_fields(get_the_ID());
+            $header_select = get_field('select-header');
+            $header_select_option = $field_hero['select_header']['select_header_format'];
+        if ($header_select_option == 'banner-image' ) :
+			get_template_part('template-parts/header-1');
+        elseif ($header_select_option == 'image-right' ) :
+			get_template_part('template-parts/header-2');
+        endif;
+        ?>

@@ -9,46 +9,63 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
 
-	<?php rowland_clone_post_thumbnail(); ?>
+<section id="page-content">
+            <div class='stripes'>
+                <?php 
+                // are there any rows within the flexible content?
+            if( have_rows('flexible_content') ): 
+                global $zindex;
+                $zindex = 1000;
 
-	<div class="entry-content">
-		<?php
-		the_content();
+                // loop through all the rows of flexible content
+                while ( have_rows('flexible_content') ) : the_row();
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rowland-clone' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
+                    // get the row layout
+                    $row_layout = get_row_layout();
+                    
+                    // get template parts based on the row layout
+                    switch ($row_layout){
+                        // General Content Stripe
+                        case 'general_content':
+                            get_template_part('template-parts/stripes/general-content');
+                            break;
+                        case 'cta_stripe':
+                            get_template_part('template-parts/stripes/cta');
+                            break;
+                        case 'full_width_image':
+                            get_template_part('template-parts/stripes/full-width-image');
+                            break;    
+                        // case 'success_story_stripe':
+                            // get_template_part('template-parts/stripes/success');
+                           // break;   
+                        case 'stat_stripe':
+                            get_template_part('template-parts/stripes/stats');
+                            break;
+                        case 'news_stripe':
+                            get_template_part('template-parts/stripes/news_stripe');
+                            break;
+                        case 'next_steps_stripe':
+                            get_template_part('template-parts/stripes/next');
+                            break;    
+                        case 'resource_and_programs_stripe':
+                            get_template_part('template-parts/stripes/resource');
+                            break;
+                        case 'quote_stripe':
+                            get_template_part('template-parts/stripes/quote');
+                             break;
+                        case 'meet_our_staff_stripe':
+                            get_template_part('template-parts/stripes/staff');
+                            break;
+                        case 'faqs_stripe':
+                            get_template_part('template-parts/stripes/faq');
+                            break;                               
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'rowland-clone' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+                        }
+                    endwhile; // close the loop of flexible content
+                
+                endif; // close flexible content conditional
+            ?>
+  
+    </div>
+</section>

@@ -7901,6 +7901,9 @@ html.is-reveal-open body {
   display: none;
 }
 
+/* Define the Fluid Typography mixin */
+/* Just add your arguments */
+/*  @include fluid-typography(16, 25, 300, 1500); */
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -8400,10 +8403,14 @@ section#page-content {
 section#page-content .stripes .cta-stripe {
   position: relative;
   z-index: 9;
-  background-color: #1773CB;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #005FA9;
 }
 
-section#page-content .stripes .cta-stripe .grid-container .grid-x .cell.large-12 {
+section#page-content .stripes .cta-stripe .grid-container .grid-x .cell.large-auto {
   font-size: 55px;
   line-height: 50px;
   font-weight: 200;
@@ -8411,14 +8418,37 @@ section#page-content .stripes .cta-stripe .grid-container .grid-x .cell.large-12
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-section#page-content .stripes .cta-stripe .grid-container .grid-x .cell.large-12 p {
+section#page-content .stripes .cta-stripe .grid-container .grid-x .cell.large-auto p {
   margin: 45px 0;
   line-height: 50px;
 }
 
-section#page-content .stripes .cta-stripe .grid-container .grid-x .cell.large-12 p a {
+section#page-content .stripes .cta-stripe .grid-container .grid-x .cell.large-auto p a {
   color: #fff;
   text-decoration-thickness: 3px;
+}
+
+section#page-content .stripes .cta-stripe .grid-container .grid-x .cell.large-shrink a.cta-link {
+  background: #fff;
+  font-size: 32px;
+  line-height: 2;
+  width: 276px;
+  height: 67px;
+  padding: 0 15px;
+  color: #000;
+  margin: 30px 0 0 0;
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+
+section#page-content .stripes .cta-stripe .grid-container .grid-x .cell.large-shrink a.cta-link .svg-inline--fa {
+  margin-left: 25px;
+}
+
+section#page-content .stripes .cta-stripe .grid-container .grid-x .cell.large-shrink a.cta-link:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 section#page-content .stripes .image-copy-stripe {
@@ -8434,7 +8464,6 @@ section#page-content .stripes .image-copy-stripe .grid-container .grid-x .cell.l
   font-weight: 400;
   color: #000;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -8450,40 +8479,89 @@ section#page-content .stripes .image-copy-stripe .grid-container .grid-x .cell.l
   font-weight: 400;
   color: #000;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  display: block;
+  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 65px;
 }
 
-section#page-content .stripes .image-copy-stripe .grid-container .grid-x .cell.large-12 span.section-sub-title p {
-  width: 66%;
-  margin-bottom: 50px;
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .cell img,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .cell img a {
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-height: 253px;
 }
 
-section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-section h3.copy-title {
-  font-size: 30px;
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-1-section,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-2-section,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-3-section,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-4-section,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .cell {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-1-section h3.copy-title,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-2-section h3.copy-title,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-3-section h3.copy-title,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-4-section h3.copy-title,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .cell h3.copy-title {
+  font-size: 26px;
   line-height: 30px;
   font-weight: 800;
   color: #000;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  margin-top: 20px;
 }
 
-section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-section h4.copy-sub-title {
-  font-size: 22px;
-  line-height: 30px;
-  font-weight: 400;
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-1-section ._5050-tile,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-2-section ._5050-tile,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-3-section ._5050-tile,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-4-section ._5050-tile,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .cell ._5050-tile {
+  margin-top: 10px;
+}
+
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-1-section span.ex-dates,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-2-section span.ex-dates,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-3-section span.ex-dates,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-4-section span.ex-dates,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .cell span.ex-dates {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 600;
   color: #000;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  margin-bottom: 15px;
   margin-top: 15px;
 }
 
-section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-section span p {
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-1-section h4.gallery-info,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-2-section h4.gallery-info,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-3-section h4.gallery-info,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-4-section h4.gallery-info,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .cell h4.gallery-info {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #000;
+  text-transform: uppercase;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-1-section span.copy-content,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-2-section span.copy-content,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-3-section span.copy-content,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-4-section span.copy-content,
+section#page-content .stripes .image-copy-stripe .grid-container .grid-x .cell span.copy-content {
   font-size: 18px;
   line-height: 30px;
   font-weight: 400;
-  color: #000;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-}
-
-section#page-content .stripes .image-copy-stripe .grid-container .grid-x .copy-section a.copy-image-link.button {
-  margin-top: 45;
+  color: #000;
 }
 
 section#page-content .stripes ._50-50-stripe {
@@ -8654,6 +8732,455 @@ section#page-content .stripes .entry-block-stripe .grid-container .grid-x .entry
 section#page-content .stripes .full-width-image-stripe {
   position: relative;
   z-index: 100;
+}
+
+section#page-content .stripes .general-content-stripe {
+  position: relative;
+  z-index: 100;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section#page-content .stripes .general-content-stripe .grid-container {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+}
+
+section#page-content .stripes .general-content-stripe .grid-container .grid-x {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content h2.section-title,
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content-image h2.section-title {
+  font-size: 68px;
+  line-height: 60px;
+  font-weight: 400;
+  color: #000;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+@media only screen and (max-width: 480px) {
+  section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content h2.section-title,
+  section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content-image h2.section-title {
+    font-size: 52px;
+    line-height: 50px;
+  }
+}
+
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content h3.section-sub-title,
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content-image h3.section-sub-title {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 400;
+  color: #000;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content span p,
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content-image span p {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  color: #000;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content span h2,
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content-image span h2 {
+  font-size: 68px;
+  line-height: 60px;
+  font-weight: 400;
+  color: #000;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  width: 80%;
+}
+
+@media only screen and (max-width: 480px) {
+  section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content span h2,
+  section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content-image span h2 {
+    font-size: 52px;
+    line-height: 50px;
+  }
+}
+
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content span h6,
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content-image span h6 {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 400;
+  color: #000;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content a.section-image-link.button,
+section#page-content .stripes .general-content-stripe .grid-container .grid-x .section-content-image a.section-image-link.button {
+  margin-top: 45px;
+}
+
+section#page-content .stripes .stats-stripe {
+  position: relative;
+  padding: 100px 0;
+}
+
+section#page-content .stripes .stats-stripe .full-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+section#page-content .stripes .stats-stripe .full-container .grid-x .cell.stats-content {
+  padding-left: 2%;
+}
+
+section#page-content .stripes .stats-stripe .full-container .grid-x .cell.stats-content h4.big-number {
+  color: #005FA9;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  margin-top: 50px;
+}
+
+section#page-content .stripes .stats-stripe .full-container .grid-x .cell.stats-content h4.big-number {
+  font-size: 56px;
+}
+
+@media screen and (min-width: 300px) {
+  section#page-content .stripes .stats-stripe .full-container .grid-x .cell.stats-content h4.big-number {
+    font-size: calc(56px + 127 * ((100vw - 300px) / 1600));
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  section#page-content .stripes .stats-stripe .full-container .grid-x .cell.stats-content h4.big-number {
+    font-size: 183px;
+  }
+}
+
+section#page-content .stripes .stats-stripe .full-container .grid-x .cell.stats-content hr.stats-hr {
+  width: 30%;
+  border: 2px solid #005FA9;
+  height: 0px;
+  margin-left: 0;
+}
+
+section#page-content .stripes .stats-stripe .full-container .grid-x .cell.stats-content .stats-text p {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 400;
+  color: #8a8a8a;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  padding-left: 17%;
+}
+
+section#page-content .stripes .quote-stripe {
+  padding-top: 150px;
+  padding-bottom: 210px;
+  background-repeat: no-repeat;
+}
+
+section#page-content .stripes .quote-stripe .grid-container .grid-x .cell.quote-text {
+  font-size: 55px;
+  line-height: 50px;
+  font-weight: 200;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+section#page-content .stripes .quote-stripe .grid-container .grid-x .cell.quote-text .quote-marks {
+  width: 15%;
+  display: block;
+  position: relative;
+  top: 76px;
+  right: 120px;
+}
+
+section#page-content .stripes .quote-stripe .grid-container .grid-x hr.quote-hr {
+  width: 20%;
+  height: 2px;
+  background-color: #8a8a8a;
+  margin-right: 80%;
+}
+
+section#page-content .stripes .quote-stripe .grid-container .grid-x .cell .quote-name,
+section#page-content .stripes .quote-stripe .grid-container .grid-x .cell .quote-title {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 400;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  display: block;
+}
+
+section#page-content .stripes .faq-stripe {
+  padding: 30px 0 60px 0;
+}
+
+section#page-content .stripes .faq-stripe h2.faq-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #1E407C;
+  font-size: 50px;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+section#page-content .stripes .faq-stripe .faq-content ul.accordion {
+  margin-left: 0;
+  background: #fff;
+  list-style-type: none;
+}
+
+section#page-content .stripes .faq-stripe .faq-content ul.accordion .accordion-item a.accordion-title {
+  font-family: 'Open Sans', sans-serif;
+  color: #494A4A;
+  font-size: 24px;
+  line-height: 28px;
+  border: solid 3px #E4E5E7;
+  margin-top: 30px;
+  background-color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 1.25rem 1rem;
+}
+
+section#page-content .stripes .faq-stripe .faq-content ul.accordion .accordion-item a.accordion-title::before {
+  position: absolute;
+  top: 30px;
+  right: 1rem;
+  margin-top: -0.5rem;
+  content: "+";
+  color: #005FA9;
+  font-size: 50px;
+}
+
+section#page-content .stripes .faq-stripe .faq-content ul.accordion .accordion-item .accordion-content {
+  border: solid 3px #E4E5E7;
+  background-color: #fff;
+  border-top: unset;
+}
+
+section#page-content .stripes .faq-stripe .faq-content ul.accordion .accordion-item .accordion-content p {
+  font-family: 'Open Sans', sans-serif;
+  color: #494A4A;
+  font-size: 18px;
+  line-height: 25px;
+  width: 90%;
+  word-break: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+}
+
+.hamburger {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+}
+
+.hamburger::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  -webkit-box-shadow: 0 8px 0 #000, 0 16px 0 #000;
+  box-shadow: 0 8px 0 #000, 0 16px 0 #000;
+  content: '';
+}
+
+.hamburger:hover::after {
+  background: #444;
+  -webkit-box-shadow: 0 8px 0 #444, 0 16px 0 #444;
+  box-shadow: 0 8px 0 #444, 0 16px 0 #444;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+/*********************** Header 1 ***********************/
+body #page #content {
+  /*********************** Header 3  ***********************/
+}
+
+body #page #content .header-1 {
+  position: relative;
+  display: block;
+  z-index: 100;
+}
+
+body #page #content .header-1 .mobile-hero-image {
+  display: none;
+  height: 100%;
+  min-height: 600px;
+  background: no-repeat right bottom;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+body #page #content .header-1 .hero-image {
+  height: 100%;
+  background: no-repeat right bottom;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+body #page #content .header-1 .hero-image .grid-container {
+  padding-bottom: 80px;
+  margin-bottom: 0px;
+}
+
+body #page #content .header-1 .hero-image .grid-container .grid-x .cell.header-text {
+  margin-top: 100px;
+}
+
+body #page #content .header-1 .hero-image .grid-container .grid-x .cell.dark h1 {
+  color: #fefefe;
+}
+
+body #page #content .header-1 .hero-image .grid-container .grid-x .cell.dark span.header1-content {
+  color: #fefefe;
+}
+
+body #page #content .header-1 .hero-image .grid-container .grid-x .cell.light h1 {
+  color: #000;
+}
+
+body #page #content .header-1 .hero-image .grid-container .grid-x .cell.light span.header1-content {
+  color: #000;
+}
+
+body #page #content .header-1 .hero-image .grid-container .grid-x .cell h1 {
+  width: 100%;
+  right: 0;
+  margin-bottom: 60px;
+  font-weight: 200;
+  position: relative;
+  z-index: 100;
+}
+
+body #page #content .header-1 .hero-image .grid-container .grid-x .cell h1 {
+  font-size: 30px;
+}
+
+@media screen and (min-width: 300px) {
+  body #page #content .header-1 .hero-image .grid-container .grid-x .cell h1 {
+    font-size: calc(30px + 62 * ((100vw - 300px) / 800));
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  body #page #content .header-1 .hero-image .grid-container .grid-x .cell h1 {
+    font-size: 92px;
+  }
+}
+
+body #page #content .header-1 .hero-image .grid-container .grid-x .cell hr.header1 {
+  z-index: 100;
+}
+
+body #page #content .header-1 .hero-image .grid-container .grid-x .cell span.header1-content p {
+  font-size: 30px;
+  position: relative;
+  line-height: 36px;
+  font-weight: 200;
+  z-index: 100;
+}
+
+body #page #content .header-1 .header__plus--pattern {
+  position: absolute;
+  background-position: right;
+  background-repeat: no-repeat;
+  top: 1px;
+  height: 857px;
+  width: 100%;
+  z-index: 1;
+  background-image: url(/wp-content/themes/engage-psu/assets/images/triangle-pattern.svg);
+}
+
+body #page #content .header-2 {
+  margin-top: 50px;
+}
+
+body #page #content .header-2 .grid-container.full .grid-x .header__2-text-container .header__2-text {
+  padding-top: 40px;
+  width: 100%;
+  max-width: 580px;
+  float: right;
+}
+
+body #page #content .header-2 .grid-container.full .grid-x .header__2-text-container .header__2-text h1 {
+  font-size: 62px;
+  line-height: 62px;
+  font-weight: 200;
+  color: #005FA9;
+  margin-left: 10px;
+}
+
+body #page #content .header-2 .grid-container.full .grid-x .header__2-image .programs__plus--pattern {
+  position: absolute;
+  background-position: right;
+  background-repeat: repeat;
+  left: 45%;
+  height: 326px;
+  width: 100%;
+  z-index: 1;
+  background-image: url(/wp-content/themes/engage-psu/assets/images/triangle-pattern.svg);
+}
+
+body #page #content .header-2 .grid-container.full .grid-x .header__2-image .header__2-image-container {
+  width: 100%;
+  max-width: 785px;
+  float: right;
+  position: relative;
+}
+
+body #page #content .header-2 .grid-container.full .grid-x .header__2-image .header__2-image-container .image {
+  max-height: 524px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body #page #content .header-2 .grid-container.full .grid-x .header__2-image .header__2-image-container .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  font-family: "object-fit: cover";
+}
+
+body #page #content .header-2 .grid-container.full .grid-x .header__2-image .header__2-image-container .image .video-thumbnails iframe {
+  width: 100%;
+}
+
+body #page #content .header-2 .grid-container.full .grid-x .clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 main#content div.bottom-pattern {
@@ -9082,56 +9609,7 @@ textarea {
 }
 
 #header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu {
-  display: table;
-}
-
-#header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu a {
   display: block;
-  text-decoration: none;
-}
-
-#header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu a:hover {
-  text-decoration: underline;
-}
-
-#header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu li {
-  position: relative;
-}
-
-#header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-#header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu ul li:hover > ul,
-#header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu ul li.focus > ul {
-  left: auto;
-}
-
-#header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu ul ul {
-  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 100%;
-  left: -999em;
-  z-index: 99999;
-}
-
-#header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu ul ul ul {
-  left: -999em;
-  top: 0;
-}
-
-#header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu ul ul ul li:hover > ul,
-#header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu ul ul ul li.focus > ul {
-  display: block;
-  left: auto;
-}
-
-#header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu ul ul a {
-  width: 200px;
 }
 
 #header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu .search-icon {
@@ -9215,7 +9693,7 @@ textarea {
 }
 
 #header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu .super-nav {
-  float: right;
+  height: 80%;
 }
 
 #header.site-header #navbar.grid-container.full .grid-x .site-nav #site-navigation.main-navigation .desktop-menu .super-nav ul li a {

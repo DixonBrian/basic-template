@@ -17,9 +17,7 @@
                     <?php 
                         $footer = get_field('identity', 'options');
                         $footer_social = get_field('social','options');
-
                  echo wp_get_attachment_image($footer['psu_logo']['id'], 'large',"", array('class' => 'psu-logo', 'sizes' => '(max-width: 524px) 440px, (max-width: 768px) 608px, 608px' )); 
-
                  echo wp_get_attachment_image($footer['palmer_logo']['id'], 'large',"", array('class' => 'palmer-logo', 'sizes' => '(max-width: 524px) 440px, (max-width: 768px) 608px, 608px' )); 
                  ?>
                  <address>
@@ -54,58 +52,28 @@
                 </div>
             </div>
         </section>
-        <!---------------- Secondary Footer ---------------->
-        <section class="footer-second">
-            <div class="grid-container">    
-            <div class="psu-logo"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/images/Penn_State_mark_white_text.png" class="logo" alt="Penn State Lion Head Shield Logo">
-            </div>
-                <ul class="footer-menu-left">
-                    <li><a href="http://psu.jobs/">Employment</a></li>
-                    <li><a href="http://www.psu.edu/maps">Maps</a></li>
-                    <li><a href="http://www.psu.edu/contact-us">Contact Us</a></li>
-                    <li><a href="http://www.psu.edu/search/gss">Search</a></li>
-                </ul>
-                <ul class="footer-menu-right">
-                    <li><a href="http://www.psu.edu/web-privacy-statement">Privacy</a></li>
-                    <li><a href="http://guru.psu.edu/policies/AD85.html">Non-discrimination</a></li>
-                    <li><a href="http://guru.psu.edu/policies/OHR/hr11.html">Equal Opportunity</a></li>
-                    <li><a href="http://www.psu.edu/accessibilitystatement">Accessibility</a></li>
-                    <li><a href="http://www.psu.edu/copyright-information">Copyright</a></li>
-                </ul>
-                    <p class="address">201 Old Main, University Park, Pennsylvania 16802  |  814-865-4700</p>
-                    <p class="copyright">The Pennsylvania State University &copy; <?php echo date('Y'); ?></p>
-            </div> <!-- .grid-container -->
-        </section> <!-- /footer-second -->
-
 <?php wp_footer(); ?>
         <!---------------- Jquery scripts ---------------->
-      
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-
-    <script src="/wp-content/themes/rowland-clone/builds/production/js/foundation.min.js"></script>
+    <script src="/wp-content/themes/rowland-clone/builds/development/js/custom.js"></script>
             <script type="text/javascript">
         $(document).ready(function() {
-
             $(document).foundation(); 
-
             // Get the button, and when the user clicks on it, execute myFunction
             document.getElementById("searchfield").onfocus=function() {showRadio();};
             $(document).on("click",function(e){
                     if ($(e.target).is(".search-field, .search-radio-buttons *, .search-radio-buttons, #searchform") === false){
-                            $("#search-radio-buttons").last().removeClass("show");
-                           
+                            $("#search-radio-buttons").last().removeClass("show"); 
                     }
-                     
             });
-
             /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
             function showRadio() {
             document.getElementById("search-radio-buttons").classList.add("show");
             $('#search-submit span').html('');
             }
-
+        });
         </script>
 </body>
 </html>

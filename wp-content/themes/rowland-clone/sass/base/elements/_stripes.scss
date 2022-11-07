@@ -19,89 +19,116 @@
         z-index: 11;
 
         .stripes {
-
-            .cta-stripe {
-                position: relative;
-                z-index: 9;
-                background-color: $PSUblue;
-
-                .grid-container {
-                    .grid-x {
-                        .cell.large-12 {
+            .cta-stripe{
+            position: relative;
+            z-index: 9;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            background-color: $dark-color;
+            .grid-container{
+                .grid-x{
+                    .cell{
+                        &.large-auto{
                             @include font-size-55-lt;
                             color: #fff;
                             font-family: $body-font-family;
-
-                            p {
-                                margin: 45px 0;
+                            p{margin: 45px 0; 
                                 line-height: 50px;
-
-                                a {
-                                    color: #fff;
-                                    text-decoration-thickness: 3px;
+                                a {color: #fff;
+                                text-decoration-thickness: 3px;
                                 }
+                            }
+                        }
+                        &.large-shrink a.cta-link{
+                                background: #fff;
+                                font-size: 32px;
+                                line-height: 2;
+                                width: 276px;
+                                height: 67px;
+                                padding: 0 15px;
+                                color: #000;
+                                margin: 30px 0 0 0;
+                                display: block;                                width: 100%;
+                                text-align: right;
+                            .svg-inline--fa{ margin-left: 25px;}
+                            &:hover{
+                                background-color: #000;
+                                color: #fff;
                             }
                         }
                     }
                 }
             }
-
+            }
             .image-copy-stripe {
                 position: relative;
                 z-index: 100;
                 margin-top: 30px;
                 margin-bottom: 30px;
-
-                .grid-container {
-                    .grid-x {
-                        .cell.large-12 {
-                            h2.section-header-title {
-                                @include font-size-68-rg;
-                                color: #000;
-                                font-family: $font-family;
-                                margin-bottom: 20px;
-                            }
-
-                            span.section-sub-title {
-                                @include font-size-24-rg;
-                                color: #000;
-                                font-family: $font-family;
-
-                                p {
-                                    width: 66%;
-                                    margin-bottom: 50px;
-                                }
-                            }
+                .grid-container .grid-x {
+                    .cell.large-12 {
+                        h2.section-header-title {
+                            @include font-size-68-rg;
+                            color: #000;
+                            font-family: $font-family;
                         }
-
-                        .copy-section {
-                            h3.copy-title {
-                                @include font-size-30-bld;
-                                color: #000;
-                                font-family: $font-family;
-                            }
-
-                            h4.copy-sub-title {
-                                @include font-size-22-rg;
-                                color: #000;
-                                font-family: $font-family;
-                                margin-top: 15px;
-                            }
-
-                            span p {
-                                @include font-size-18-rg;
-                                color: #000;
-                                font-family: $font-family;
-                            }
-
-                            a.copy-image-link.button {
-                                margin-top: 45;
-                            }
+        
+                        span.section-sub-title {
+                            @include font-size-24-rg;
+                            color: #000;
+                            font-family: $font-family;
+                            display: block;
+                            width: 80%;
+                            margin-top: 15px;
+                            margin-bottom: 65px;
+                        }
+                    }
+                    .cell img,
+                    .cell img a {
+                        object-fit: cover;
+                        max-height: 253px;
+                    }
+                    .copy-1-section,
+                    .copy-2-section,
+                    .copy-3-section,
+                    .copy-4-section,
+                    .cell {
+                        margin-bottom: 30px;
+                        text-align: left;
+                        h3.copy-title {
+                            @include font-size-26-bld;
+                            color: #000;
+                            font-family: $font-family;
+                            margin-top: 20px;
+                        }
+                        ._5050-tile {
+                            margin-top: 10px;
+                        }
+                        span.ex-dates {
+                            @include font-size-20-semibld;
+                            color: #000;
+                            font-family: $font-family;
+                            margin-bottom: 15px;
+                            margin-top: 15px;
+                        }
+                        h4.gallery-info {
+                            @include font-size-14-smibld;
+                            color: #000;
+                            text-transform: uppercase;
+                            font-family: $font-family;
+                            margin-bottom: 30px;
+                            margin-top: 15px;
+                        }
+                        span.copy-content {
+                            @include font-size-18-rg;
+                            font-family: $font-family;
+                            color: #000;
                         }
                     }
                 }
             }
-
             ._50-50-stripe {
                 position: relative;
                 z-index: 30;
@@ -231,6 +258,175 @@
                 position: relative;
                 z-index: 100;
 
+            }
+            .general-content-stripe {
+                position: relative;
+                z-index: 100;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                display: flex;
+                .grid-container {
+                    flex: auto;
+                    .grid-x {
+                           display: inline-flex;
+                           margin-top: 30px;
+                           margin-bottom: 30px;
+                           .section-content,
+                           .section-content-image {
+                               h2.section-title {
+                                   @include font-size-68-rg;
+                                   color: #000;
+                                   font-family: $font-family;
+                               }
+                               h3.section-sub-title {
+                                   @include font-size-24-rg;
+                                   color: #000;
+                                   font-family: $font-family;
+                                   margin-top: 15px;
+                                   margin-bottom: 30px;
+                               }
+                               span {
+                                   p {
+                                       @include font-size-18-rg;
+                                       color: #000;
+                                       font-family: $font-family;
+                                   }
+                                   h2 {
+                                       @include font-size-68-rg;
+                                       color: #000;
+                                       font-family: $font-family;
+                                       width: 80%;
+                                   }
+                                   h6 {
+                                       @include font-size-24-rg;
+                                       color: #000;
+                                       font-family: $font-family;
+                                   }
+                               }
+                               a.section-image-link.button {
+                                   margin-top: 45px;
+                               }
+                           }
+                      }
+               }
+            }
+            .stats-stripe{
+                position: relative;
+                padding:100px 0;
+                .full-container{
+                    max-width: 1600px;
+                    margin: 0 auto;
+                    .grid-x{
+                        .cell.stats-content{
+                            padding-left: 2%;
+                            h4.big-number{
+                                @include fluid-type(300px, 1900px,56px,183px);
+                                color: $dark-color;
+                                font-family: $font-family;
+                                margin-top: 50px;
+                            }
+                            hr.stats-hr {
+                                width: 30%;
+                                border: 2px solid $dark-color;
+                                height: 0px;
+                                margin-left: 0;
+                            }
+                            .stats-text p {
+                                @include font-size-24-rg;
+                                color: $dark-gray;
+                                font-family: $font-family;
+                                padding-left: 17%;
+                            }
+                        }
+                    }
+                }
+            } 
+            .quote-stripe {
+                padding-top: 150px;
+                padding-bottom: 210px;
+                background-repeat: no-repeat;
+                .grid-container .grid-x {
+                    .cell.quote-text {
+                        @include font-size-55-lt;
+                        font-family: $font-family;
+                        font-weight: 400;
+                        .quote-marks {
+                            width: 15%;
+                            display: block;
+                            position: relative;
+                            top: 76px;
+                            right: 120px;
+                        }
+                    }
+                    hr.quote-hr {
+                        width: 20%;
+                        height: 2px;
+                        background-color: $dark-gray;
+                        margin-right: 80%;
+                    }
+                    .cell .quote-name,
+                    .cell .quote-title {
+                        @include font-size-24-rg;
+                        font-family: $font-family;
+                        display: block;
+                    }
+                }
+            }
+            .faq-stripe{
+                padding: 30px 0 60px 0;
+                h2.faq-title {
+                        font-family: 'Open Sans', sans-serif;
+                        font-weight: 300;
+                        color: #1E407C;
+                        font-size: 50px;
+                        line-height: 1;
+                        margin-bottom: 30px;
+                    }
+                .faq-content{
+                    ul.accordion{
+                        margin-left: 0;
+                        background: #fff;
+                        list-style-type: none;
+                        .accordion-item {
+                            a.accordion-title {
+                            font-family: 'Open Sans', sans-serif;
+                                color: #494A4A;
+                                font-size: 24px;
+                                line-height: 28px;
+                                border: solid 3px #E4E5E7;
+                                margin-top: 30px;
+                                background-color: #fff;
+                                text-decoration: none;
+                                display: block;
+                                padding: 1.25rem 1rem;
+                                &::before{
+                                    position: absolute;
+                                        top: 30px;
+                                        right: 1rem;
+                                        margin-top: -0.5rem;
+                                        content: "+";
+                                        color: $dark-color;
+                                        font-size: 50px;
+                                }
+                            }
+                            .accordion-content {
+                                border: solid 3px #E4E5E7;
+                                background-color: #fff;
+                                border-top: unset;
+                                p {
+                                    font-family: 'Open Sans', sans-serif;
+                                    color: #494A4A;
+                                    font-size: 18px;
+                                    line-height: 25px;
+                                    width: 90%;
+                                    word-break: break-word;
+                                }
+                                
+                            }
+                        
+                        }
+                    }
+                }
             }
         }
     }

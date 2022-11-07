@@ -143,8 +143,8 @@ function rowland_clone_scripts() {
 	wp_enqueue_style( 'Rowland-new-main', '/wp-content/themes/rowland-clone/builds/development/css/style.css', array(), _S_VERSION );
     	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), null, true);    
-	wp_enqueue_script( 'rowland-clone-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'custom-js', '/wp-content/themes/rowland-clone/builds/development/js/custom.js', array(), null, true ); 
+
+    wp_enqueue_script( 'custom-js', '/wp-content/themes/rowland-clone/builds/development/js/custom-min.js', array(), null, true ); 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -230,27 +230,18 @@ if( function_exists('acf_add_options_page') ) {
 		'capability'  => 'edit_posts',
 		'parent_slug' => '',
 		'position'    => false
-	)); 
+	) ); 
 	acf_add_options_sub_page( array(
 		'page_title'  => 'Theme Header Settings',
 		'menu_title'  => 'Header',
 		'parent_slug' => 'theme-options',
 	) );
-	acf_add_options_sub_page( array(
+    acf_add_options_sub_page( array(
 		'page_title'  => 'Theme Footer Settings',
 		'menu_title'  => 'Footer',
 		'parent_slug' => 'theme-options',
 	) );
 }
-
-/*********************** Remove Post from admin menu ***********************/
-
-function post_remove ()      //creating functions post_remove for removing menu item
-{ 
-   remove_menu_page('edit.php');
-}
-
-add_action('admin_menu', 'post_remove');   //adding action for triggering function call
 
 /*********************** Add Super Menu ***********************/
 function wpb_custom_new_menu() {
@@ -261,6 +252,7 @@ function wpb_custom_new_menu() {
     )
   );
 }
+
 add_action( 'init', 'wpb_custom_new_menu' );
 
 // Disable WP Users REST API for non-authenticated users (allows anyone to see username list at /wp-json/wp/v2/users)
@@ -280,14 +272,24 @@ add_filter( 'rest_authentication_errors', function( $result ) {
 	return $result;
 });
 
+add_action( 'init', 'wpb_custom_new_menu' );
+
+
+/* Image Size */
+add_image_size( 'hero-banner-home-large', 2048, 1300, false );
+add_image_size( 'hero-banner-home', 768, 853, false );
+add_image_size( 'hero-banner-home-small', 375, 508, false );
+
+
 // Adding custiom headers
-function additional_securityheaders( $headers ) {
-    $headers['Referrer-Policy']             = 'no-referrer';
-    $headers['X-Content-Type-Options']      = 'nosniff';
-    $headers['X-XSS-Protection']            = '1; mode=block';
-    $headers['Permissions-Policy']          = 'fullscreen=(self "https://***Update with site url****"), geolocation=*, camera=()';
-    $headers['X-Frame-Options']             = "SAMEORIGIN";
-    $headers ['Strict-Transport-Security']  = "max-age=31536000";
-  return $headers;
-}
-add_filter( 'wp_headers', 'additional_securityheaders' );
+// function additional_securityheaders( $headers ) {
+//    $headers['Referrer-Policy']             = 'no-referrer';
+//    $headers['X-Content-Type-Options']      = 'nosniff';
+//    $headers['X-XSS-Protection']            = '1; mode=block';
+//    $headers['Permissions-Policy']          = 'fullscreen=(self "https://***Update with site url****"), geolocation=*, camera=()';
+//    $headers['X-Frame-Options']             = "SAMEORIGIN";
+ //   $headers ['Strict-Transport-Security']  = "max-age=31536000";
+//  return $headers;
+// }
+// add_filter( 'wp_headers', 'additional_securityheaders' );
+

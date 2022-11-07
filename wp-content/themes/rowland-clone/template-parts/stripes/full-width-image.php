@@ -1,5 +1,5 @@
   <?php  $bottom = get_sub_field('margin_bottom');
-    $top = get_sub_field('margin-top');
+    $top = get_sub_field('margin_top');
 ?>
 
 <div class='full-width-image-stripe' style="<?php if ($bottom == 1 ){echo 'margin-bottom:60px;'; } else {}; if ($top == 1){echo 'margin-top:60px;'; } else {}; ?>" >
