@@ -6,9 +6,7 @@
         margin-left: auto;
         margin-right: auto;
         padding-top: 35px;
-
         .grid-x {
-
             .site-branding {
                 a img {
                     margin-left: 95px;
@@ -16,7 +14,6 @@
                     margin-top: 14px;
                 }
             }
-
             .site-nav {
                 padding-right: 4%;
                 min-height: 96px;
@@ -75,7 +72,7 @@
 
                         &.hover {
                             bottom: revert;
-
+                            background-color: lightgray;
                             right: 47px;
                             top: 11px;
                             width: 7%;
@@ -120,20 +117,14 @@
                             }
                         }
                     }
-
                     .mobile-menu {
                         display: none;
                     }
-
                     .menu-button-close {
                         display: none;
                     }
-
                     .desktop-menu {
                         display: block;
-                       
-                      
-
                         .search-icon {
                             border-bottom: 3px solid #91959C;
                             z-index: 105;
@@ -210,7 +201,7 @@
                             }
                         }
 
-                        .menu-menu-1-container{
+                        .menu-primary-container{
                             float: right;
                             ul li {
                                 margin: 25px 0 25px 40px;
@@ -326,7 +317,7 @@
                 }
             }
 
-            button.menu-icon {
+            .button.menu-icon {
                 .menu-hamburger-icon {
                     left: 0;
                     top: 0;

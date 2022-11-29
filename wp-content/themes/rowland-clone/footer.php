@@ -13,24 +13,30 @@
     <footer id="colophon" class="site-footer">
         <section id="primary-footer" class="grid-container" >
              <div class='grid-x grid-padding-x '> 
-                <div class='cell medium-4 address'> 
+                <div class='cell medium-3 address'> 
                     <?php 
                         $footer = get_field('identity', 'options');
                         $footer_social = get_field('social','options');
-                 echo wp_get_attachment_image($footer['psu_logo']['id'], 'large',"", array('class' => 'psu-logo', 'sizes' => '(max-width: 524px) 440px, (max-width: 768px) 608px, 608px' )); 
-                 echo wp_get_attachment_image($footer['palmer_logo']['id'], 'large',"", array('class' => 'palmer-logo', 'sizes' => '(max-width: 524px) 440px, (max-width: 768px) 608px, 608px' )); 
-                 ?>
-                 <address>
-                     <?php echo $footer['address']; ?>
-                 </address>
+                    ?>
+                    <address>
+                        <?php echo $footer['address']; ?>
+                    </address>
                 </div>
-                <div class='cell medium-6 large-offset-0 medium-offset-2 large-4 hours'> 
-                    <h3 class="footer-hours">Hours</h3>
+                <div class='cell medium-6 large-offset-1 large-3 hours'> 
                 <?php echo get_field('hours', 'options'); ?>
                 </div>
                 <div class='cell medium-12 large-3 social'> 
+                    <div class='footer-links'> 
+                        
+                    <?php $footer_links = get_field('footer_links', 'options');
+                        if(isset($footer_links)&& is_array($footer_links)):
+                        foreach($footer_links as $link):
+                         ?>
+                         <a href="<?php echo $link['footer_link']['url'] ?>" target='<?php echo $link['footer_link']['target'] ?>'><?php echo $link['footer_link']['title'] ?></a>
+                         </br>
+                         <?php endforeach; endif; ?>
+                    </div>
                     <div class='connect'> 
-                        <h3>Connect</h3>
                         <?php  $footer_social['social_icons'];
                         if(isset($footer_social['social_icons'])&& is_array($footer_social['social_icons'])):
                         foreach($footer_social['social_icons'] as $tiles):
@@ -38,16 +44,6 @@
                         <a   aria-label="Link To <?php echo $tiles['link_title'];?>" target='<?php echo $tiles['media_link']['target'];?>' href="<?php echo $tiles['media_link']['url'];?> "><span class="social-media-title">Link To <?php echo $tiles['link_title'];?></span><?php echo $tiles['font_awesome_icons']; ?></a>
                         <?php endforeach;
                         endif; ?>
-                    </div>
-
-                    <div class='contact'> 
-                        <?php $footer_contact_us = get_field('contact_us','options'); ?>
-                        <h3>Contact</h3>
-                        <a aria-label="<?php echo $footer_contact_us['contact_email']; ?>" href="mailto:<?php echo $footer_contact_us['contact_email']; ?>"><i class="fas fa-envelope"></i><span><?php  echo $footer_contact_us['contact_email']; ?></span></a>
- 
-                        <br/>
-                        <a aria-label="Telephone Number" href="tel:<?php echo $footer_contact_us['phone_number']; ?>"><i class="fas fa-phone"></i><span><?php  echo $footer_contact_us['phone_number']; ?></span></a>
-                        
                     </div>
                 </div>
             </div>

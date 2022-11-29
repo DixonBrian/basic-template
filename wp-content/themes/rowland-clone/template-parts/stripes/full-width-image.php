@@ -1,4 +1,10 @@
-  <?php  $bottom = get_sub_field('margin_bottom');
+<?php
+/**
+ * Full Width Image Stripe
+ *
+  * @package Basic template
+ */
+  $bottom = get_sub_field('margin_bottom');
     $top = get_sub_field('margin_top');
 ?>
 

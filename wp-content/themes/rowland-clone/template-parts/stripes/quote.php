@@ -1,6 +1,6 @@
 <?php
 /**
- * cta Stripe
+ * Quote Stripe
  *
   * @package Basic template
  */
@@ -19,7 +19,7 @@ $quote_title = get_sub_field('quote_title');
                 <?php echo $quote_text; ?>
             </div>
             <hr class="quote-hr cell large-2 large-offset-2">
-            <div class='cell large-3 large-offset-3 medium-offset-1'> 
+            <div class='cell medium-3 large-offset-3 medium-offset-1'> 
                 <span class="quote-name"><?php echo $quote_name; ?></span>
                 <span class="quote-title"><?php echo $quote_title; ?></span>
             </div>

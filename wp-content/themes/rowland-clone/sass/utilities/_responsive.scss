@@ -4,6 +4,31 @@
          top: 207px;
      }
 
+         /*********************** mobile menu ***********************/
+         header#header.site-header {
+             #navbar.grid-container.full {
+                 .headder__row {
+                     .grid-x {
+                         .site-nav {
+                             #site-navigation.main-navigation {
+                                 button.button.menu-icon {
+                                     display: block;
+                                     top: 20px;
+                                     right: 9px
+                                 }
+    
+                                 .desktop-menu {
+                                     display: none;
+                                 }
+    
+                                ul{display:block};
+                             }
+                         }
+                     }
+                 }
+             }
+        }
+
      /*********************** mobile menu ***********************/
      header#header.site-header {
          .alert.non-emergency {

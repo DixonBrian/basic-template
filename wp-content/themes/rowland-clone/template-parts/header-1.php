@@ -63,7 +63,5 @@ endif;
     </div><!------------------------ closes .header ------------------------>
 
 <?php }; ?>    
+
 </section>
-<?php if(is_front_page()): ?>
-        <!--div class="programs__plus--pattern content bottom" role="img" aria-label="PSU Plus pattern"  ></div -->
-        <?php endif; ?>

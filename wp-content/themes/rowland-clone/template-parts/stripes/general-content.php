@@ -1,4 +1,10 @@
-<?php 
+<?php
+/**
+ * General Content Stripe
+ *
+  * @package Basic template
+ */
+
 $image_id = get_sub_field('section_image');
 $images = wp_get_attachment_image($image_id,'','',array('sizes' => '(max-width: 524px) 378px, (max-width: 768px) 768px, 1024px' ));
 $button_link = get_sub_field('section_link');

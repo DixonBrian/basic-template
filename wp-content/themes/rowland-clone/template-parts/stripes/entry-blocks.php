@@ -1,4 +1,10 @@
-<?php 
+<?php
+/**
+ * Entry-Block Stripe
+ *
+  * @package Basic template
+ */
+
  $threecards = get_sub_field('three_blocks'); 
   $fourcards = get_sub_field('four_blocks'); ?>
 

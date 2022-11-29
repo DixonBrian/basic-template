@@ -1,6 +1,6 @@
 <?php
 /**
- * cta Stripe
+ * faq Stripe
  *
   * @package Basic template
  */
@@ -12,7 +12,7 @@ $faqs = get_sub_field('faqs');
 
 
 
-<div class='faq-stripe '  > 
+<div class='faq-stripe'  > 
      <div class='grid-container'> 
           <div class='grid-x  grid-margin-x '>
                 <div class='cell large-12 large-offset-0 medium-10 medium-offset-1 small-10 small-offset-1 <?php if (empty ($section_title)) echo 'hide-me' ?>' >

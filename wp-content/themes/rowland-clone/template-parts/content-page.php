@@ -27,8 +27,8 @@
                     // get template parts based on the row layout
                     switch ($row_layout){
                         // General Content Stripe
-                        case 'general_content':
-                            get_template_part('template-parts/stripes/general-content');
+                        case 'image_copy':
+                            get_template_part('template-parts/stripes/image-copy');
                             break;
                         case 'cta_stripe':
                             get_template_part('template-parts/stripes/cta');
@@ -36,36 +36,47 @@
                         case 'full_width_image':
                             get_template_part('template-parts/stripes/full-width-image');
                             break;    
-                        // case 'success_story_stripe':
-                            // get_template_part('template-parts/stripes/success');
-                           // break;   
-                        case 'stat_stripe':
+
+                        case 'entry_block_stripe':
+                            get_template_part('template-parts/stripes/entery-blocks');
+                            break;
+                        case '50_50_image':
+                            get_template_part('template-parts/stripes/5050');
+                            break;                               
+                        case 'stats_stripe':
                             get_template_part('template-parts/stripes/stats');
-                            break;
-                        case 'news_stripe':
-                            get_template_part('template-parts/stripes/news_stripe');
-                            break;
-                        case 'next_steps_stripe':
-                            get_template_part('template-parts/stripes/next');
-                            break;    
-                        case 'resource_and_programs_stripe':
-                            get_template_part('template-parts/stripes/resource');
-                            break;
+                            break; 
                         case 'quote_stripe':
                             get_template_part('template-parts/stripes/quote');
-                             break;
-                        case 'meet_our_staff_stripe':
-                            get_template_part('template-parts/stripes/staff');
-                            break;
-                        case 'faqs_stripe':
+                            break;  
+                        case 'faq':
                             get_template_part('template-parts/stripes/faq');
-                            break;                               
-
+                            break;   
+                        case 'feature_benefit':
+                            get_template_part('template-parts/stripes/feature-benefit');
+                            break;  
+                        case 'general_content':
+                            get_template_part('template-parts/stripes/general-content');
+                            break;       
+                        case 'stat_stripe':
+                            get_template_part('template-parts/stripes/stats');
+                            break;   
+                        case 'faq_stripe':
+                            get_template_part('template-parts/stripes/faq');
+                            break;  
+                        case 'resources':
+                            get_template_part('template-parts/stripes/resources');
+                            break;   
+                        case 'staff_stripe':
+                            get_template_part('template-parts/stripes/staff-stripe');
+                            break; 
+                        case 'three_column_list':
+                            get_template_part('template-parts/stripes/three-column-list');
+                            break;            
                         }
                     endwhile; // close the loop of flexible content
-                
                 endif; // close flexible content conditional
             ?>
-  
     </div>
+    
 </section>

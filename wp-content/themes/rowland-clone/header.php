@@ -17,6 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
+    <script src="https://kit.fontawesome.com/fa76f26877.js" crossorigin="anonymous"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -117,7 +118,7 @@
                                     <?php
                                     wp_nav_menu(
                                         array(
-                                            'theme_location' => 'primary-menu',
+                                            'theme_location' => 'menu-1',
                                             'menu_id'        => 'desktop-menu',
                                             'menu_class'    => 'menu-menu-1-container',
                                         )
@@ -132,14 +133,15 @@
         </div> <!------------------------ /#navbar ------------------------>
 
 	</header><!-- #masthead -->
+    
+
  	<main id="content" class="site-content">
 		<?php 
             $field_hero = get_fields(get_the_ID());
-            $header_select = get_field('select-header');
             $header_select_option = $field_hero['select_header']['select_header_format'];
-        if ($header_select_option == 'banner-image' ) :
+        if ($header_select_option == 'image-title' ) :
 			get_template_part('template-parts/header-1');
-        elseif ($header_select_option == 'image-right' ) :
+        elseif ($header_select_option == 'title-only' ) :
 			get_template_part('template-parts/header-2');
         endif;
         ?>
