@@ -35,12 +35,12 @@
                 <?php if($cropped_image_id){echo $cropped_image;}; ?>
             </div>
             <div class='cell large-6 copy-<?php echo $i; ?>-section'> 
-                <?php if ( $single['section_title']) : ?><h3 class='copy-title'><?php echo $one['section_title'] ?></h3><?php endif; ?>
+                <?php if ( $one['section_title']) : ?><h3 class='copy-title'><?php echo $one['section_title'] ?></h3><?php endif; ?>
                 <hr class="_5050-tile">
             <?php if ($start_dates || $end_dates) { ?>
                 <span class="ex-dates"><?php if ($start_dates) { echo $start_dates; } if($end_dates) { echo "-" . $end_dates; }; ?></span><?php }; ?>
                 <br>
-                <?php if ( $single['section_subtitle']) : ?><h4 class="gallery-info"> <?php echo $one['section_subtitle']; ?></h4><?php endif; ?>
+                <?php if ( $one['section_subtitle']) : ?><h4 class="gallery-info"> <?php echo $one['section_subtitle']; ?></h4><?php endif; ?>
                 <span class='copy-content'><?php echo $one['section_content'] ?></span>
             </div>
     <?php   
